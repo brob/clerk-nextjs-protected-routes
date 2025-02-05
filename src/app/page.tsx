@@ -1,4 +1,3 @@
-import Nav from "@/components/Nav";
 import Link from "next/link";
 
 
@@ -9,7 +8,7 @@ export default function Home() {
           <div className="space-y-4">
             <article className="p-4 bg-white shadow">
               <h2 className="text-xl font-semibold"><Link href="/dashboard">The locked dashboard</Link></h2>
-              <p className="text-gray-700">Account information and plans if you're logged in.</p>
+              <p className="text-gray-700">Account information and plans if you&apos;re logged in.</p>
             </article>
             <article className="p-4 bg-white shadow">
               <h2 className="text-xl font-semibold"><Link href="/paid-courses">Paid Courses</Link></h2>

@@ -1,7 +1,7 @@
 import Nav from "@/components/Nav";
 
 
-export default function Home() {
+export default function FreeCourses() {
   return (
     <div className="container mx-auto p-4">
       <div className="flex">
@@ -9,7 +9,7 @@ export default function Home() {
           <Nav />
         </aside>
         <main className="w-3/4 p-4">
-          <h1 className="text-2xl font-bold mb-4">Latest Articles</h1>
+          <h1 className="text-2xl font-bold mb-4">Free courses</h1>
           <div className="space-y-4">
             <article className="p-4 bg-white shadow">
               <h2 className="text-xl font-semibold">Article 1</h2>

@@ -6,7 +6,6 @@ import { currentUser } from '@clerk/nextjs/server'
 export default async function Dashboard() {
     const user = await currentUser()
 
-console.log(user.emailAddresses)
   return (
     <>
             <h1 className="text-2xl font-bold mb-4">Dashboard</h1>

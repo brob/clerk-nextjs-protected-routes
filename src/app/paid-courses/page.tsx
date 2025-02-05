@@ -1,24 +1,20 @@
-import Nav from "@/components/Nav";
+import Link from 'next/link';
+import Articles from '../../article-data.mjs'
 
-
-export default function PaidCourses() {
+export default function FreeCourses() {
   return (
-    <>
-          <h1 className="text-2xl font-bold mb-4">Paid courses</h1>
+    <div className="not-prose">
+          <h1 className="text-4xl font-bold mb-4">Free courses</h1>
           <div className="space-y-4">
-            <article className="p-4 bg-white shadow">
-              <h2 className="text-xl font-semibold">Article 1</h2>
-              <p className="text-gray-700">Summary of the first article...</p>
-            </article>
-            <article className="p-4 bg-white shadow">
-              <h2 className="text-xl font-semibold">Article 2</h2>
-              <p className="text-gray-700">Summary of the second article...</p>
-            </article>
-            <article className="p-4 bg-white shadow">
-              <h2 className="text-xl font-semibold">Article 3</h2>
-              <p className="text-gray-700">Summary of the third article...</p>
-            </article>
-          </div>
-          </>
+            {Articles.map((article, index) => (
+              <article key={index} className="p-4 bg-white shadow">
+              <h2 className="text-xl font-semibold">
+                <Link href={`/paid-courses/${article.slug}`}>{article.title}{article.isProtected && " (Locked)"}{article.fullLock && " (Full lock)"}</Link>
+              </h2>
+              <p className="text-gray-700">{article.description}</p>
+              </article>
+            ))}
+            </div>
+       </div>   
   );
 }

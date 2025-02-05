@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Articles from '../../article-data.mjs'
 
 
@@ -10,7 +11,7 @@ export default function FreeCourses() {
             {Articles.map((article, index) => (
               <article key={index} className="p-4 bg-white shadow">
               <h2 className="text-xl font-semibold">
-                <a href={`/articles/${article.slug}`}>{article.title}{article.isProtected && " (Locked)"}{article.fullLock && " (Full lock)"}</a>
+                <Link href={`/articles/${article.slug}`}>{article.title}{article.isProtected && " (Locked)"}{article.fullLock && " (Full lock)"}</Link>
               </h2>
               <p className="text-gray-700">{article.description}</p>
               </article>

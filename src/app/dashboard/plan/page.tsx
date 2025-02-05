@@ -1,6 +1,4 @@
 "use client"
-import Nav from "@/components/Nav";
-
 
 import { useState } from "react";
 

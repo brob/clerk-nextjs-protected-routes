@@ -1,4 +1,3 @@
-import Nav from "@/components/Nav";
 import { currentUser } from '@clerk/nextjs/server'
 
 

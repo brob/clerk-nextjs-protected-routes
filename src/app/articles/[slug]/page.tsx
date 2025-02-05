@@ -3,13 +3,13 @@ import { notFound } from 'next/navigation'
 import { auth } from '@clerk/nextjs/server'
 import ProtectedContent from '@/components/ProtectedContent'
 
-type Params = {
-    params: {
-        slug: string
-    }
-}
+interface PageProps {
+    params: Promise<{
+      slug: string;
+    }>
+  }
 
-export default async function Page({ params }: Params) {
+export default async function Page({ params }: PageProps) {
     const slug = (await params).slug
     const article = await articles.find((article: any) => article.slug === slug)
     if (!article) return notFound()

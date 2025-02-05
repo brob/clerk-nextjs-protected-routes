@@ -1,6 +1,4 @@
-import { Protect } from '@clerk/nextjs'
 import articles from '../../../article-data.mjs'
-import Fallback from '@/components/Fallback'
 import { notFound } from 'next/navigation'
 import { auth } from '@clerk/nextjs/server'
 import ProtectedContent from '@/components/ProtectedContent'

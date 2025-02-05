@@ -15,7 +15,7 @@ export default function Nav() {
                 <a href="/paid-courses" className="text-blue-500">Paid Courses</a>
               </li>
               <li className="mb-2">
-                <a href="/free-courses" className="text-blue-500">Free Courses</a>
+                <a href="/articles" className="text-blue-500">Free Courses</a>
               </li>
             </ul>
           </nav>

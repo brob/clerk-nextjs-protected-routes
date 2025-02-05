@@ -1,20 +1,21 @@
 import Nav from "@/components/Nav";
+import { currentUser } from '@clerk/nextjs/server'
 
 
-export default function Dashboard() {
+
+
+export default async function Dashboard() {
+    const user = await currentUser()
+
+console.log(user.emailAddresses)
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex">
-        <aside className="w-1/4 p-4 bg-gray-100">
-          <Nav />
-        </aside>
-        <main className="w-3/4 p-4">
+    <>
             <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
         <section className="mb-8">
           <h2 className="text-xl font-semibold mb-2">Profile Information</h2>
           <div className="bg-white p-4 rounded shadow">
-            <p><strong>Name:</strong> John Doe</p>
-            <p><strong>Email:</strong> john.doe@example.com</p>
+            <p><strong>Name:</strong> {user?.firstName} {user?.lastName}</p>
+            <p><strong>Email:</strong> {user?.emailAddresses[0].emailAddress ? user.emailAddresses[0].emailAddress : 'N/A'}</p>
           </div>
         </section>
         <section>
@@ -28,8 +29,6 @@ export default function Dashboard() {
             <p>A description</p>
           </div>
         </section>
-        </main>
-      </div>
-    </div>
+        </>
   );
 }

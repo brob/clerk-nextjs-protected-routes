@@ -13,13 +13,7 @@ export default function Dashboard() {
     
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex">
-        <aside className="w-1/4 p-4 bg-gray-100">
-          <Nav />
-        </aside>
-        
-    <section className="w-3/4 p-4">
+    <>
         <h2 className="text-xl font-semibold mb-4">Choose Your Plan</h2>
         <div className="flex space-x-4">
             <div
@@ -49,8 +43,6 @@ export default function Dashboard() {
             <button className="bg-blue-500 text-white py-2 px-4 rounded">Select</button>
             </div>
         </div>
-    </section>
-      </div>
-    </div>
+        </>
   );
 }

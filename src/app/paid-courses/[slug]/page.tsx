@@ -3,22 +3,17 @@ import articles from '../../../article-data.mjs'
 import Fallback from '@/components/Fallback'
 import { notFound } from 'next/navigation'
 import { auth } from '@clerk/nextjs/server'
-
-function ProtectedContent({isProtected, teaser, children}) {
-    
-    if (!isProtected) return children
-
-    return (
-        <>
-            { isProtected && <div dangerouslySetInnerHTML={{ __html: teaser }} />}
-            <Protect fallback={<Fallback />}>{children}</Protect>
-        </>
-    )
+import ProtectedContent from '@/components/ProtectedContent'
+type Params = {
+    params: {
+        slug: string
+    }
 }
 
-export default async function Page({ params }) {
+
+export default async function Page({ params }: Params) {
     const slug = (await params).slug
-    const article = await articles.find((article:string) => article.slug === slug)
+    const article = await articles.find((article: any) => article.slug === slug)
     if (!article) return notFound()
     if (article.fullLock) return await auth.protect()
     return (

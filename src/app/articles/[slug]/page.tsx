@@ -15,7 +15,7 @@ export default async function Page({ params }: PageProps) {
     if (!article) return notFound()
     if (article.fullLock) return await auth.protect()
     return (
-        <div>
+        <div className='prose'>
             <h1>{article.title}</h1>
             <ProtectedContent isProtected={article.isProtected} teaser={article.teaser}>
                 <div dangerouslySetInnerHTML={{ __html: article.body }} />

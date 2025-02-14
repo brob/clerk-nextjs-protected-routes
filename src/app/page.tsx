@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="not-prose">
           <h1 className="text-2xl font-bold mb-4">Latest Articles</h1>
-          <div className="space-y-4">
+          <div className="">
             <article className="p-4 bg-white shadow">
               <h2 className="text-xl font-semibold"><Link href="/dashboard">The locked dashboard</Link></h2>
               <p className="text-gray-700">Account information and plans if you&apos;re logged in.</p>

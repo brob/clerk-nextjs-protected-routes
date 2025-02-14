@@ -10,6 +10,7 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 import Nav from "@/components/Nav";
+import { AppSidebar } from "@/components/app-sidebar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -47,10 +48,10 @@ export default function RootLayout({
       </header>
       <div className="container mx-auto p-4">
       <div className="flex">
-        <aside className="w-1/4 p-4 bg-gray-100">
-          <Nav />
+        <aside>
+          <AppSidebar />
         </aside>
-        <main className="w-3/4 p-4 prose">
+        <main className="p-4 flex-1">
       {children}
       
         </main>
